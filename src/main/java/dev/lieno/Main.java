@@ -5,12 +5,16 @@ public class Main {
         Corridore mark = new Corridore("mark");
         Corridore piliph = new Corridore("piliph");
 
-        mark.start();
-        piliph.start();
+        Thread r1 = new Thread(mark);
+        Thread r2 = new Thread(piliph);
 
+
+        r1.run();
+        r2.run();
+        
         try {
-            mark.join();
-            piliph.join();
+            r1.join();
+            r2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

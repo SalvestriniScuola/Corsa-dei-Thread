@@ -1,6 +1,6 @@
 package dev.lieno;
 
-public class Corridore extends Thread {
+public class Corridore implements Runnable {
     private String name;
 
     public Corridore(String name) {
